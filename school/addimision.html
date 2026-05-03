@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Mission High School - Cultural Day Admission</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+}
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+}
+
+nav h2 {
+    font-size: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+
+.hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: background-image 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+    text-shadow: 2px 2px 5px black;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    text-shadow: 1px 1px 3px black;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about {
+    background: #f4f4f4;
+}
+
+.culture {
+    background: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+}
+
+.culture::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.culture-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button.submit {
+    background: #0a1f44;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+button.submit:hover {
+    background: #123a7a;
+}
+
+
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<nav>
+    <h2>World Mission High School</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#culture">Culture</a>
+        <a href="#admission">Admission</a>
+    </div>
+</nav>
+
+
+<div class="hero" id="home">
+    <h1>Cultural Day Admission 2026</h1>
+    <p>Experience Rwandan culture, tradition, and education at World Mission High School.</p>
+    <button onclick="document.getElementById('admission').scrollIntoView()">Apply Now</button>
+</div>
+
+
+<section id="about" class="about">
+    <h2>About Our School</h2>
+    <p>
+        We combine academic excellence with Rwandan cultural heritage, preparing students for a better future.
+    </p>
+</section>
+
+
+<section id="culture" class="culture">
+    <div class="culture-content">
+        <h2>Rwandan Cultural Day</h2>
+        <p>
+            Enjoy Intore dance, traditional drums, cultural fashion, and heritage exhibitions.
+            The rwandan traditional day specificaly says about how rwandans were living befor civilzhgghhhghghghhghggZZ
+        </p>
+    </div>
+</section>
+
+
+<section>
+    <h2>Programs</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Science</h3>
+            <p>Physics, Chemistry, Biology</p>
+        </div>
+        <div class="card">
+            <h3>Arts</h3>
+            <p>Culture, History, Languages</p>
+        </div>
+        <div class="card">
+            <h3>ICT</h3>
+            <p>Programming & Networking</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="admission">
+    <h2>Admission Form</h2>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+
+        <select required>
+            <option value="">Select Program</option>
+            <option>Science</option>
+            <option>Arts</option>
+            <option>ICT</option>
+        </select>
+
+        <button class="submit">Submit Application</button>
+    </form>
+</section>
+
+
+<footer>
+    <p>© 2026 World Mission High School | Cultural Day Admission</p>
+</footer>
+
+<script>
+
+const images = [
+    "https://images.unsplash.com/photo-1549887534-1541e9326642",
+    "https://images.unsplash.com/photo-1523805009345-7448845a9e53",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "https://images.unsplash.com/photo-1583394838336-acd977736f90"
+];
+
+let index = 0;
+const hero = document.querySelector(".hero");
+
+function changeBackground() {
+    hero.style.backgroundImage =
+        `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${images[index]}')`;
+
+    index = (index + 1) % images.length;
+}
+
+setInterval(changeBackground, 4000);
+changeBackground();
+
+
+function submitForm(e) {
+    e.preventDefault();
+    alert("🎉 Application submitted successfully! Welcome to Cultural Day.");
+}
+</script>
+
+</body>
+</html>
